@@ -1,0 +1,16 @@
+name: portlandgov-branding-template
+services:
+  appserver:
+    type: php:8.4
+    via: nginx
+    ssl: true
+    webroot: .
+    xdebug: false
+    composer: []
+    composer_version: 2-latest
+    overrides:
+      environment:
+        XDEBUG_MODE:
+proxy:
+  appserver_nginx:
+    - pgovbranding.lndo.site

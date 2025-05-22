@@ -1,0 +1,53 @@
+.cloudy-link {
+  color: $cloudy-color-blue-600;
+  display: inline-flex;
+  @include type-style($cloudy-ui-text);
+
+  &.cloudy-link--has-background {
+    @extend .btn;
+    @extend .btn-primary;
+
+    .icon {
+      position: relative;
+      margin-left: spacer(2);
+      margin-right: 0;
+      color: $light;
+    }
+  }
+
+  &.cloudy-link--is-standalone {
+    position: relative;
+    display: inline-block;
+    width: calc(100% - 14px);
+    vertical-align: middle;
+
+    .icon {
+      position: relative;
+      margin-left: spacer(2);
+      margin-right: 0;
+      color: $cloudy-color-blue-600;
+    }
+
+    &:hover {
+      .icon {
+        color: $cloudy-color-blue-800;
+      }
+    }
+  }
+
+  &.cloudy-link--has-icon {
+    .icon svg,
+    i.fas {
+      color: $cloudy-color-purple-900;
+    }
+    &:hover {
+      text-decoration: none;
+      i.fas {
+        text-decoration: none;
+      }
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+}

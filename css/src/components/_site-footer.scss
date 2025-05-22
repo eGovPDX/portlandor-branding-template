@@ -1,0 +1,59 @@
+/**
+ * @file
+ * Footer Styling.
+ */
+
+.cloudy-footer {
+  background: $light;
+  padding-top: spacer(8);
+
+  // Applies sizing to headings in footer.
+  h2 {
+    @include type-style($cloudy-heading-6);
+  }
+
+  &--top {
+    margin-bottom: spacer(8);
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: spacer(12);
+    }
+  }
+
+  &--bottom {
+    ul,
+    .menu {
+      list-style-type: none;
+      margin: 0 !important;
+      padding: 0;
+
+      li,
+      .menu-item {
+        margin-top: spacer(4);
+        padding: 0;
+
+        a {
+          border-top: 0;
+          padding: 0;
+
+          &.is-active {
+            border: none;
+            color: $cloudy-color-blue-600;
+          }
+        }
+      }
+    }
+  }
+
+  // When contact-item is used within the footer, we need to match the spacing for the other menu items
+  .cloudy-contact-item {
+    margin-bottom: 0;
+    .cloudy-contact-item__resource-wrapper {
+      margin-bottom: spacer(4);
+      // For consistency, remove margin-bottom for last children of footer "menu" items & the footer login link
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

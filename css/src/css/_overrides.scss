@@ -1,0 +1,43 @@
+// GENERAL STYLES
+html,
+body {
+  background: $body-bg;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+details {
+  border-radius: $border-radius;
+}
+
+ul.pagination {
+  margin-top: 1rem;
+  flex-wrap: wrap;
+
+  .page-item {
+    margin-bottom: spacer(1);
+  }
+}
+
+hr.separator {
+  border: 0.25rem solid $cloudy-color-purple-900;
+  border-radius: $border-radius;
+  height: 0;
+}
+
+// Remove margin on last paragraph in alerts
+.alert p:last-of-type {
+  margin-bottom: 0;
+}
+
+// Smaller font size in offcanvas tools sidebar
+.cloudy-offcanvas-tools {
+  h2 {
+    @include type-style($cloudy-heading-3);
+  }
+}
+
+// Break unbreakable words to keep content from overflowing
+.ck-content {
+  overflow-wrap: break-word;
+}

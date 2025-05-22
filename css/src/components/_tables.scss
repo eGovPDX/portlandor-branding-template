@@ -1,0 +1,121 @@
+/**
+ * @file
+ * Seven styles for Tables.
+ *
+ * TODO: Update the system tables used in views to be targetted more
+ * TODO: Update the tables patterns to use a predefined set of bootstrap utils
+ *
+ */
+
+/**
+ * Captions.
+ */
+.caption {
+  margin-bottom: 1.2em;
+}
+
+caption {
+  text-align: left;
+  caption-side: top;
+  font-weight: bold;
+  font-size: $font-size-lg;
+  color: $cloudy-color-neutral-900;
+}
+
+th,
+td {
+  padding: 0.2rem spacer(2);
+  text-align: left;
+  vertical-align: middle;
+}
+
+table {
+  width: 100%;
+  margin: 0 0 3rem;
+}
+
+thead th,
+tbody th {
+  font-weight: $font-weight-semibold;
+}
+
+tbody tr:hover,
+tbody tr:focus {
+  background: $light;
+}
+/* See colors.css */
+tbody tr.color-warning:hover,
+tbody tr.color-warning:focus {
+  background: $light;
+}
+tbody tr.color-error:hover,
+tbody tr.color-error:focus {
+  background: $light;
+}
+
+table.no-highlight tr.selected td {
+  background: transparent;
+}
+
+th > a {
+  position: relative;
+  display: block;
+}
+
+/* 1. Must match negative bottom padding of the parent <th> */
+th.is-active > a {
+  color: $cloudy-color-blue-800;
+}
+th.is-active img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+th.is-active {
+  border-bottom: 2px solid $cloudy-color-blue-800;
+}
+th > a:hover,
+th > a:focus,
+th.is-active > a:hover,
+th.is-active > a:focus {
+  color: $cloudy-color-blue-300;
+  text-decoration: none;
+}
+th > a:hover::after,
+th > a:focus::after,
+th.is-active > a:hover::after,
+th.is-active > a:focus::after {
+  border-bottom-color: $cloudy-color-blue-300;
+}
+td .item-list ul {
+  margin: 0 !important;
+}
+td.is-active {
+  background: none;
+}
+
+/* Force browsers to calculate the width of a 'select all' <th> element. */
+th.select-all {
+  width: 1px;
+}
+
+/**
+ * Responsive tables.
+ */
+@include media-breakpoint-down(sm) {
+  /* 600px */
+  th.priority-low,
+  td.priority-low,
+  th.priority-medium,
+  td.priority-medium {
+    display: none;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  /* 920px */
+  th.priority-low,
+  td.priority-low {
+    display: none;
+  }
+}

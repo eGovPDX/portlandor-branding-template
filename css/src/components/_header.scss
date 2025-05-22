@@ -1,0 +1,277 @@
+/*
+* Global site header
+* Logo
+* Header global menu
+* Header global search - large and small
+* Search autocomplete
+*/
+
+// Hide transition when toggling menu/search if another one is currently open
+.no-transition {
+  transition: none !important;
+}
+
+// Global site header
+.cloudy-header {
+  &__wrapper {
+    background-color: $cloudy-color-purple-900;
+  }
+  &__logo-wrapper {
+    display: flex;
+    flex: 0 0;
+    flex-basis: 158px;
+    margin: spacer(2) spacer(0) spacer(2) spacer(4);
+    @include media-breakpoint-up(md) {
+      flex-basis: 267px;
+    }
+  }
+  &__search-wrapper {
+    flex-basis: 100%;
+    order: 1;
+    margin-left: auto;
+    transition: height 250ms ease-in-out;
+    @include media-breakpoint-down(md) {
+      &.collapse:not(.show) {
+        height: 0;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      flex-basis: auto;
+      order: inherit;
+      &.collapse {
+        display: flex;
+      }
+    }
+  }
+  &__menu-wrapper {
+    order: 1;
+    flex-basis: 100%;
+    background-color: $cloudy-color-neutral-0;
+    border-bottom: spacer(3) solid $cloudy-color-purple-900;
+    transition: height 500ms ease-in-out;
+    @include media-breakpoint-up(md) {
+      border-bottom-width: spacer(4);
+    }
+    &.collapse:not(.show) {
+      height: 0;
+    }
+  }
+  &__search-region {
+    flex-grow: 1;
+  }
+  &__toggle {
+    @include button-variant(
+      $cloudy-color-mega-menu-button-bg,
+      $cloudy-color-mega-menu-button-bg,
+      $white
+    );
+    @include button-size(spacer(4), spacer(8), spacer(5), $border-radius-md);
+
+    border: none;
+    background: none;
+    line-height: 1rem;
+    @include media-breakpoint-down(md) {
+      @include button-size(spacer(2), spacer(2), spacer(5), $border-radius-md);
+    }
+    &:hover,
+    &:focus,
+    &[aria-expanded="true"] {
+      background: $cloudy-color-mega-menu-button-bg;
+    }
+    .toggle__label {
+      display: flex;
+      align-items: center;
+      font-weight: $font-weight-semibold;
+      color: $cloudy-color-neutral-0;
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+        font-size: 1rem;
+        .toggle-icon {
+          margin-right: 0;
+          margin-bottom: spacer(2);
+        }
+      }
+      .toggle-icon {
+        display: inline-block;
+        height: spacer(6);
+        width: spacer(6);
+        background-color: $cloudy-color-neutral-0;
+        mask-size: contain;
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-image: url("/themes/custom/cloudy/src/components/icon/svgs/close.svg");
+
+        &.icon-search {
+          mask-image: url("/themes/custom/cloudy/src/components/icon/svgs/search.svg");
+        }
+      }
+    }
+    &.collapsed {
+      .toggle-icon {
+        mask-image: url("/themes/custom/cloudy/src/components/icon/svgs/menu.svg");
+      }
+    }
+    &--menu {
+      @include media-breakpoint-up(md) {
+        margin-right: spacer(4);
+      }
+    }
+    &--search {
+      margin-left: auto;
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
+  }
+  // Expanded search form close search button
+  &__close-search {
+    background: transparent;
+    border: none;
+    border-radius: $border-radius-md;
+    margin-left: spacer(2);
+    padding: spacer(2);
+    &:hover {
+      background: $cloudy-color-mega-menu-button-bg;
+    }
+    .icon {
+      color: $cloudy-color-neutral-0;
+    }
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}
+
+// stylelint-disable no-descending-specificity
+// Search form styles - contains shared styles, search small, and search large
+.cloudy-search-form {
+  position: relative;
+  form {
+    display: flex;
+    align-items: stretch;
+    background: $cloudy-color-neutral-0;
+    border-radius: $border-radius-md;
+    .form-item {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      margin: 0;
+    }
+    .form-actions {
+      background-color: $cloudy-color-blue-600;
+      border-radius: 0 $border-radius-md $border-radius-md 0;
+      &:hover,
+      &:focus-within {
+        background-color: $cloudy-color-blue-500;
+      }
+    }
+  }
+  &__input[type="search"] {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding: spacer(2);
+    color: $cloudy-color-neutral-900;
+    // TODO: Use libraries-override to override autocomplete styling
+    // * Hide autocomplete loading module background
+    background-image: none !important;
+    border: none;
+    border-radius: $border-radius-md 0 0 $border-radius-md;
+    @include media-breakpoint-up(lg) {
+      width: 250px;
+    }
+    &::placeholder {
+      color: $cloudy-color-neutral-900;
+      opacity: 1;
+      overflow: visible;
+    }
+  }
+  .cloudy-btn--icon[type="submit"] {
+    @include button-variant($light, $light, $white);
+
+    margin: 0;
+    height: 100%;
+    padding: spacer(0) spacer(4);
+    border: none;
+    border-radius: 0 $border-radius-md $border-radius-md 0;
+
+    .icon {
+      margin: 0;
+    }
+  }
+
+  // Header region - /node - !/front, !/search, !/search/*
+  &--small {
+    @include media-breakpoint-up(md) {
+      margin: 0 spacer(4);
+    }
+  }
+  // Content region - /front, /search, /search/*
+  &--large {
+    form {
+      height: 67px;
+      margin: spacer(0);
+      border-radius: $border-radius-xl;
+      @include media-breakpoint-up(md) {
+        height: 69px;
+      }
+    }
+    .cloudy-search-form__input {
+      height: 100%;
+      width: 100%;
+      padding: spacer(0) spacer(4);
+      font-size: $font-size-lg;
+      background-color: $light;
+    }
+    .cloudy-btn--icon[type="submit"] {
+      @include button-variant($cloudy-color-blue-600, $light);
+
+      padding: 0 (spacer(6) * 1.1);
+
+      .icon svg {
+        color: $cloudy-color-neutral-0;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+// stylelint-enable no-descending-specificity
+
+// TODO: Override module library with libraries-override
+// Autocomplete fields including Search API and entity reference fields
+.ui-autocomplete {
+  display: flex;
+  flex-direction: column;
+  color: $cloudy-color-neutral-900;
+  border: 2px solid $light;
+  z-index: $zindex-popover;
+  &#ui-id-1 {
+    width: 100% !important;
+  }
+  li.ui-menu-item {
+    &:hover {
+      background: transparent;
+    }
+    a.ui-menu-item-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding: spacer(2) spacer(2);
+      color: $cloudy-color-neutral-900;
+      .search-api-autocomplete-suggestion {
+        padding: spacer(0);
+        width: 100%;
+      }
+      &.ui-state-active {
+        display: flex;
+        flex-direction: column;
+        color: $cloudy-color-neutral-0;
+        background: $cloudy-color-blue-600;
+        .search-api-autocomplete-suggestion {
+          color: inherit;
+          background: none;
+        }
+      }
+    }
+  }
+}

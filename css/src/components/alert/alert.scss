@@ -1,0 +1,50 @@
+@mixin alert-color($class, $color) {
+  &.alert--#{$class} {
+    background-color: $color;
+  }
+}
+
+.cloudy-alert {
+  display: block;
+  margin-bottom: 2px;
+  padding: spacer(4);
+  color: $cloudy-color-neutral-0;
+
+  a {
+    color: $cloudy-color-neutral-0;
+    text-decoration: underline !important;
+  }
+
+  .icon {
+    align-self: flex-start;
+    color: $cloudy-color-neutral-0;
+    margin-right: spacer(4);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  @include alert-color("info", $cloudy-color-purple-600);
+  @include alert-color("warning", $cloudy-color-orange-temp);
+
+  &__title {
+    padding-right: 5px;
+  }
+
+  &__body {
+    p {
+      display: inline; // Very important to keep title and content on the same line.
+      font-weight: 300; // May consider throwing this into it's own type style
+    }
+    p:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+// Snugs up the bottom margin against the top of the header
+.region-pre-header .cloudy-alert {
+  margin: 0;
+}

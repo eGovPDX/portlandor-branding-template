@@ -1,0 +1,241 @@
+/*
+** Print-Specific Styles
+*/
+
+@media print {
+  // Chrome doesn't properly handle transitions
+  // https://stackoverflow.com/questions/26011254/chrome-print-preview-different-than-in-devtools
+  * {
+    transition: none !important;
+  }
+
+  html {
+    font-size: 10pt;
+  }
+
+  h1 {
+    font-size: 16pt;
+  }
+
+  h2 {
+    font-size: 12pt;
+    page-break-after: avoid-page;
+  }
+
+  h3 {
+    font-size: 11pt;
+  }
+
+  h4 {
+    font-size: 9pt;
+  }
+
+  h5 {
+    font-size: 9pt;
+  }
+
+  h6 {
+    font-size: 9pt;
+  }
+
+  h2,
+  h3,
+  h4 {
+    position: relative;
+    display: block;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  h2::after,
+  h3::after,
+  h4::after {
+    content: "";
+    display: block;
+    height: 100px;
+    margin-bottom: -100px;
+  }
+
+  .cloudy-side h2 {
+    font-size: 11pt;
+  }
+
+  .cloudy-side h3 {
+    font-size: 10pt;
+  }
+
+  .cloudy-content {
+    display: block;
+    width: 67%;
+    float: left;
+  }
+
+  .cloudy-side {
+    display: block;
+    width: 30%;
+    float: left;
+  }
+
+  .cloudy-offcanvas-button {
+    display: none;
+  }
+
+  @page {
+    size: letter;
+  }
+
+  body {
+    min-width: 650px !important;
+  }
+
+  .container {
+    min-width: 650px !important;
+    width: auto;
+  }
+
+  #block-portlandlegacypathsblock,
+  section.cloudy-footer--top,
+  footer.cloudy-footer,
+  .region-footer-third,
+  .region-footer-second,
+  .region-header-form,
+  .region-messages,
+  .cloudy-header__menu-wrapper,
+  .cloudy-header__toggle,
+  .region-recent-agendas,
+  .field--name-field-council-session-video,
+  .block-views-blockcouncil-agendas-block-recent-council-agendas,
+  .field--name-field-session-registration-text,
+  .field--name-field-session-closed-text,
+  .council-session-close,
+  .toc-js,
+  .cloudy-back-to-top,
+  .page-node-type-council-agenda .breadcrumb,
+  .page-node-type-city-code .breadcrumb,
+  .page-node-type-policy .breadcrumb,
+  .page-node-type-city-charter .breadcrumb,
+  .diff-header,
+  .diff-controls {
+    display: none !important;
+  }
+
+  .cloudy-footer {
+    clear: both;
+  }
+
+  .field--name-field-body-content {
+    p,
+    blockquote,
+    hr,
+    .list-group-item,
+    .field--name-field-body-content ul,
+    .field--name-field-body-content ol,
+    .step ol,
+    .step ul,
+    .teaser__tags,
+    .council-document__title {
+      max-width: 100% !important;
+    }
+  }
+
+  .field--name-field-full-document-title h2 {
+    font-size: 14pt;
+  }
+
+  .view-display-id-entity_view_1,
+  .views-element-container {
+    position: relative;
+    display: block;
+  }
+
+  .relation--type-agenda-item,
+  .session-meta {
+    position: relative;
+    display: block;
+    width: 100%;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  #cloudy-menu,
+  .region-global-admin,
+  .region-pre-header,
+  .region-tabs,
+  .block-portland-revision-block,
+  .portland-revision--block {
+    display: none !important;
+  }
+  .block-fixed-block-contentfooter-links {
+    display: none !important;
+  }
+  #block-feedbacklink {
+    display: none !important;
+  }
+
+  .table-responsive {
+    overflow: visible !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+  }
+
+  .badge {
+    border: 1px solid $cloudy-color-neutral-900;
+  }
+
+  .page-node-type-council-document .node__content {
+    .field--name-field-document {
+      display: none;
+    }
+
+    // Show the URLs of anchor tags when printing council docs
+    // Relative URLs
+    a[href^="/"]::after {
+      content: " (https://www.portland.gov" attr(href) ")";
+      color: $body-color;
+    }
+
+    // Absolute URLs
+    a[href^="http"]::after {
+      content: " (" attr(href) ")";
+      color: $body-color;
+    }
+
+    // Don't show URLs in documents and exhibits field or document history
+    .field--name-field-documents-and-exhibits a::after,
+    .view-admin-agenda-items a::after {
+      content: "";
+    }
+
+    .testimony-button {
+      display: none;
+    }
+  }
+
+  // Hide Expand or Collapse all links
+  div.aria-accordion .toggle-accordion {
+    display: none !important;
+  }
+
+  // Hide pseudo styles when printing
+  .aria-accordion .aria-accordion__heading {
+    button {
+      padding-left: 5px !important;
+    }
+    button::before,
+    button::after {
+      display: none;
+    }
+  }
+
+  // Hide the ed11y button for print
+  ed11y-element-panel,
+  ed11y-element-tip,
+  ed11y-element-result,
+  .ed11y-ring-yellow {
+    display: none;
+  }
+}

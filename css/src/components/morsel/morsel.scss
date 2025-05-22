@@ -1,0 +1,23 @@
+.morsel {
+  &.morsel--is-draft {
+    img {
+      filter: grayscale(1);
+    }
+  }
+
+  &__image {
+    @include media-breakpoint-up(md) {
+      margin-left: spacer(4);
+    }
+  }
+
+  &__location {
+    & + .morsel__text {
+      margin-top: spacer(4);
+    }
+
+    .field--name-title {
+      font-weight: 600;
+    }
+  }
+}

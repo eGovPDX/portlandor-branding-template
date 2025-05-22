@@ -1,0 +1,61 @@
+// Bootstrap button overrides
+.btn-primary,
+.button-primary,
+.button--primary {
+  @include button-variant(
+    $cloudy-color-blue-600,
+    $cloudy-color-blue-600,
+    $cloudy-color-neutral-0,
+    $cloudy-color-blue-700,
+    $cloudy-color-blue-700,
+    $cloudy-color-neutral-0,
+    $cloudy-color-blue-700,
+    $cloudy-color-blue-700,
+    $cloudy-color-neutral-0
+  );
+}
+
+// Buttons
+.button {
+  @extend .btn;
+
+  margin-right: 0;
+  margin-left: spacer(2);
+}
+
+.button .fa,
+.fas,
+.fab {
+  margin: 0 spacer(2) 0 0;
+}
+
+// Form buttons
+.form-actions button.btn {
+  margin-right: spacer(2);
+}
+form .btn {
+  margin-bottom: 0;
+}
+
+.btn-cta {
+  @extend .btn;
+  @extend .btn-primary;
+
+  white-space: inherit;
+  background: $cloudy-color-blue-600;
+  border: none;
+  color: $cloudy-color-neutral-0;
+
+  &:hover {
+    background: $cloudy-color-blue-800;
+    border: none;
+  }
+}
+
+.btn-cta-outline {
+  @extend .btn;
+  @extend .btn-outline-primary;
+
+  color: $cloudy-color-blue-600;
+  border-color: $cloudy-color-blue-600;
+}

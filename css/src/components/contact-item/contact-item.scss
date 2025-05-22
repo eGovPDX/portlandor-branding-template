@@ -1,0 +1,14 @@
+.cloudy-contact-item {
+  & ~ .cloudy-contact-item {
+    margin: spacer(8) 0;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  &__resource-wrapper {
+    margin-bottom: spacer(2);
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

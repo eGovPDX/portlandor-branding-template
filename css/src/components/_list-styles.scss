@@ -1,0 +1,164 @@
+/**
+ * @file
+ * List styles.
+ * How should lists look.
+ */
+
+// stylelint-disable no-descending-specificity
+
+ul,
+ol {
+  padding-left: spacer(10);
+}
+
+ol {
+  list-style-type: decimal;
+  ol {
+    list-style-type: upper-alpha;
+    ol {
+      list-style-type: upper-roman;
+      ol {
+        list-style-type: lower-alpha;
+        ol {
+          list-style-type: lower-roman;
+          ol {
+            list-style-type: decimal;
+          }
+        }
+      }
+    }
+  }
+}
+
+ul.checkbox-list {
+  list-style: none !important;
+  ul {
+    list-style: none !important;
+  }
+  li::before {
+    border: 0.1rem solid $body-color;
+    content: "";
+    display: inline-flex;
+    height: 1rem;
+    vertical-align: top;
+    margin-top: 4px;
+    margin-left: -1.5rem;
+    margin-right: 0.5rem;
+    width: 1rem;
+  }
+}
+
+ul {
+  list-style-type: disc;
+  ul {
+    list-style-type: "-  ";
+    ul {
+      list-style-type: circle;
+    }
+  }
+}
+
+// To make legislative lists correctly display diff comparisons and
+// to ensure that screen readers correctly read the list items
+// this style removes numbering from an ordered list so that it can
+// be manually added into the <li> element as text.
+ol.code-list {
+  list-style: none;
+  padding-inline-start: 0;
+  li {
+    display: list-item;
+    margin-bottom: $spacer;
+  }
+  ol {
+    list-style: none !important;
+    padding-right: $spacer;
+    margin-top: $spacer;
+  }
+}
+
+// This style is deprecated in favor of .code-list
+// Keep for backwards compatibility for council documents
+ol.code-section-list {
+  list-style: upper-alpha;
+  li {
+    display: list-item;
+    padding-bottom: $spacer;
+  }
+  ol {
+    list-style-type: decimal;
+    margin-top: $spacer;
+    ol {
+      counter-reset: list-item;
+      list-style-type: lower-alpha;
+      ol {
+        counter-reset: list-item item;
+        list-style-type: none;
+        li {
+          display: list-item;
+          padding-bottom: $spacer;
+        }
+        li::before {
+          content: "(" counter(item) ")";
+          counter-increment: item;
+          display: inline-flex;
+          text-align: left;
+          padding-right: 0.25rem;
+        }
+        ol {
+          counter-reset: item;
+          list-style-type: none;
+          li::before {
+            content: "(" counter(item, lower-alpha) ")";
+            counter-increment: item;
+            display: inline-flex;
+            text-align: left;
+            padding-right: 0.25rem;
+          }
+          ol {
+            counter-reset: item;
+            list-style-type: none;
+            li::before {
+              content: "(" counter(item, lower-roman) ")";
+              counter-increment: item;
+              display: inline-flex;
+              text-align: left;
+              padding-right: 0.25rem;
+            }
+            ol {
+              counter-reset: item;
+              list-style-type: decimal;
+              li {
+                display: list-item;
+              }
+              li::before {
+                content: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+ol,
+ol ol,
+ol ol ol,
+ol ol ol ol,
+ol ol ol ol ol,
+ol ol ol ol ol ol,
+ol ol ol ol ol ol ol {
+  ul {
+    list-style-type: disc;
+    li {
+      display: list-item !important;
+    }
+    li::before {
+      counter-increment: none;
+      content: none !important;
+    }
+    ul {
+      list-style-type: "-  ";
+    }
+  }
+}
