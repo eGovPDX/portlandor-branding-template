@@ -1,7 +1,7 @@
 # Portland.gov Branding Template
 A simple portland.gov HTML branding template for web applications.
 
-**Version:** 1.1
+**Version:** 1.2
 
 ## How to use
 1. [Download a zip file](https://github.com/eGovPDX/portlandor-branding-template/archive/refs/heads/master.zip) with the latest template.
@@ -14,13 +14,17 @@ We will update the template whenever we make significant changes to the portland
 
 ### Changelog
 
-#### 1.1 
+#### 1.2
+* Accessibility improvements to HTML
+* Updated CSS and JS resources
+
+#### 1.1
 
 * Updated accessibility link in the footer
 * Added example Bootstrap styles to `index.html`
 * Refreshed `cloudy.bundle.css`
 * Added CSS source map files
 
-#### 1.0 
+#### 1.0
 
 * Initial release

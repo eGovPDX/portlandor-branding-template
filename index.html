@@ -28,7 +28,7 @@
     </style>
 </head>
 
-<body class="group-page path-node page-node-type-page">
+<body>
     <!-- TODO: Optional: Insert Google Tag Manager <noscript> here -->
 
     <a href="#main-content" class="visually-hidden focusable skip-link">Skip to main content</a>
@@ -39,9 +39,7 @@
             <div class="cloudy-header__wrapper d-flex justify-content-between align-items-center flex-wrap px-0">
 
                 <div class="region region-header cloudy-header__logo-wrapper">
-                    <a href="https://www.portland.gov/" class="align-self-center"
-                        aria-label="Go to the official City of Portland, Oregon website homepage."
-                        title="Go to the official City of Portland, Oregon website homepage." rel="home">
+                    <a href="https://www.portland.gov/" class="align-self-center" aria-label="Portland.gov home" title="Portland.gov home" rel="home">
                         <!-- TODO: Update the paths below the location where you've uploaded the image files -->
                         <picture>
                             <source media="(max-width: 767.98px)"
@@ -53,7 +51,7 @@
                                         img/seal-logo-2x.png 2x,
                                         img/seal-logo-3x.png 3x"/>
                             <img src="img/seal-logo.png"
-                                    alt="Official City of Portland seal. The image depicts Portlandia holding her trident backdropped by mountain and river, accompanied by the text 'City of Portland, Oregon 1851'"
+                                    alt=""
                                     class="img-fluid"/>
                         </picture>
                     </a>
@@ -64,8 +62,8 @@
                     <!-- TODO: Optional: Menu links for stuff like sign in/out, my account, etc. 
                         Add/edit/remove links as needed.
                     -->
-                    <a href="#" rel="nofollow">My Account</a>
-                    <a href="#" rel="nofollow">Sign Out</a>
+                    <a href="#" rel="nofollow">My account</a>
+                    <a href="#" rel="nofollow">Sign out</a>
                 </div>
             </div>
         </header>
@@ -79,7 +77,7 @@
                             <!-- TODO: Insert breadcrumb links here. We generaly recommend using at least
                                 one breadcrumb link pointing to the most relevant service or information 
                                 page on www.portland.gov -->
-                            <li class="breadcrumb-item"><a href="#">Breadcrumb Link</a></li>
+                            <li class="breadcrumb-item"><a href="#">Breadcrumb link</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -92,7 +90,7 @@
                     <div class="clearfix"></div>
                     <div class="grid_16">
                         <!-- TODO: Insert application content here -->
-                        <h1>My Application</h1>
+                        <h1>Application name</h1>
                         <p>Application content goes here.</p>
                         
                         <h2>Style Examples</h2>
@@ -172,21 +170,20 @@
                                     <div class="content">
                                         <div class="clearfix text-formatted field field--label-hidden field--name-body field--type-text-with-summary">
                                             <div class="field__item">
-                                                <p>
-                                                    The City of Portland ensures meaningful access to City programs,
-                                                    services, and activities to comply with Civil Rights Title VI and
-                                                    ADA Title II laws and reasonably provides: translation,
-                                                    interpretation, modifications, accommodations, alternative formats,
-                                                    auxiliary aids and services. <a href="/311/ada-request">Request an ADA accommodation</a> 
-                                                    or call <a href="tel:5038234000">503-823-4000</a>, Relay Service: <a href="tel:711">711</a>.
-                                                </p>
-                                                <p>
-                                                    <a href="tel:5038234000">503-823-4000</a>&nbsp; Traducción e Interpretación |&nbsp;Biên
-                                                    Dịch và Thông Dịch&nbsp; |&nbsp;口笔译服务&nbsp; |&nbsp;&nbsp;Устный и письменный
-                                                    перевод&nbsp; |&nbsp;&nbsp;Turjumaad iyo Fasiraad&nbsp;|&nbsp;Письмовий і усний
-                                                    переклад&nbsp; |&nbsp; Traducere și interpretariat&nbsp; |&nbsp;&nbsp;Chiaku
-                                                    me Awewen Kapas |&nbsp;अनुवादन तथा व्याख्या&nbsp; 
-                                                </p>
+												<p>
+													The City of Portland ensures meaningful access to City programs,
+													services, and activities to comply with Civil Rights Title VI and
+													ADA Title II laws and reasonably provides: translation,
+													interpretation, modifications, accommodations, alternative formats,
+													auxiliary aids and services. <a href="https://www.portland.gov/311/ada-request">Request an ADA accommodation</a> 
+													or call <a href="tel:5038234000">503-823-4000</a>, Relay Service: <a href="tel:711">711</a>.
+												</p>
+												<p>
+													<a href="tel:5038234000">503-823-4000</a>&nbsp; Traducción e Interpretación&nbsp;| Biên 
+													Dịch và Thông Dịch&nbsp;| 口笔译服务&nbsp;| Устный и письменный перевод&nbsp;| Turjumaad 
+													iyo Fasiraad&nbsp;| Письмовий і усний переклад&nbsp;| Traducere și interpretariat&nbsp;| 
+													Chiaku me Awewen Kapas&nbsp;| अनुवादन तथा व्याख्या
+												</p>
                                             </div>
                                         </div>
                                     </div>
@@ -222,14 +219,15 @@
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-3 mb-8">
                             <div>
-                                <div>
-                                    <h2 class="h6">General information</h2>
+                                <div class="cloudy-contact-item">
+                                    <h2 class="h6">Contact information</h2>
 
                                     <div class="cloudy-contact__resource">
                                         <div class="cloudy-contact-item__resource-wrapper">
                                             <a
                                                 href="mailto:311@portlandoregon.gov"
-                                                class="cloudy-link cloudy-link--has-icon">
+                                                class="cloudy-link cloudy-link--has-icon"
+                                                aria-label="Email 311@portlandoregon.gov">
                                                 <span class="icon icon--size-xs">
                                                     <svg
                                                         id="icon-email"
@@ -249,7 +247,7 @@
                                             </a>
                                         </div>
                                         <div class="cloudy-contact-item__resource-wrapper">
-                                            <a href="tel:311" class="cloudy-link cloudy-link--has-icon">
+                                            <a href="tel:311" class="cloudy-link cloudy-link--has-icon" aria-label="Phone 311" aria-describedby="contact-311-info">
                                                 <span class="icon icon--size-xs">
                                                     <svg
                                                         id="icon-phone-311"
@@ -266,10 +264,10 @@
                                                 </span>
                                                 <span>311</span>
                                             </a>
-                                            <span class="ps-1">Information and Customer Service</span>
+                                            <span class="ps-1" id="contact-311-info">Information and customer service</span>
                                         </div>
                                         <div class="cloudy-contact-item__resource-wrapper">
-                                            <a href="tel:503-823-4000" class="cloudy-link cloudy-link--has-icon">
+                                            <a href="tel:503-823-4000" class="cloudy-link cloudy-link--has-icon" aria-label="Phone 503-823-4000">
                                                 <span class="icon icon--size-xs">
                                                     <svg
                                                         id="icon-phone-info"
@@ -288,7 +286,7 @@
                                             </a>
                                         </div>
                                         <div class="cloudy-contact-item__resource-wrapper">
-                                            <a href="tel:711" class="cloudy-link cloudy-link--has-icon">
+                                            <a href="tel:711" class="cloudy-link cloudy-link--has-icon" aria-label="TTY 711" aria-describedby="contact-oregon-relay-info">
                                                 <span class="icon icon--size-xs">
                                                     <svg
                                                         id="icon-oregon-relay"
@@ -314,14 +312,14 @@
                                                 </span>
                                                 <span>711</span>
                                             </a>
-                                            <span class="ps-1">Oregon Relay Service</span>
+                                            <span class="ps-1" id="contact-oregon-relay-info">Oregon Relay Service</span>
                                         </div>
-                                        <h2 class="h6 mt-8">Follow on Social Media</h2>
+                                        <h2 class="h6 mt-8">Follow on social media</h2>
                                         <div class="cloudy-contact-item__resource-wrapper">
                                             <a
                                                 href="https://www.facebook.com/PortlandORGov"
                                                 class="cloudy-link cloudy-link--has-icon"
-                                                aria-label="Facebook">
+                                                aria-label="Facebook PortlandORGov">
                                                 <span class="icon icon--size-xs">
                                                     <svg
                                                         role="img"
@@ -344,7 +342,7 @@
                                             <a
                                                 href="https://x.com/PortlandGov"
                                                 class="cloudy-link cloudy-link--has-icon"
-                                                aria-label="X (formerly Twitter)">
+                                                aria-label="X (formerly Twitter) PortlandGov">
                                                 <span class="icon icon--size-xs">
                                                     <svg
                                                         role="img"
@@ -366,7 +364,7 @@
                                             <a
                                                 href="https://www.instagram.com/PortlandGov"
                                                 class="cloudy-link cloudy-link--has-icon"
-                                                aria-label="Instagram">
+                                                aria-label="Instagram PortlandGov">
                                                 <span class="icon icon--size-xs">
                                                     <svg
                                                         role="img"
@@ -392,77 +390,72 @@
                         <div class="col-12 col-md-6 col-lg-3 mb-8">
                             <div>
                                 <div class="region region-footer-second">
-                                    <nav
-                                        role="navigation"
-                                        aria-labelledby="block-terms-policies-menu"
+                                    <div
                                         id="block-terms-policies"
                                         data-block-plugin-id="system_menu_block:terms-policies"
                                         class="block block-menu navigation menu--terms-policies">
-                                        <h2 id="block-terms-policies-menu">Terms, policies</h2>
+                                        <h2 id="block-terms-policies-menu">Terms and policies</h2>
 
-                                        <ul class="menu">
+                                        <ul class="menu menu--level-1">
                                             <li class="menu-item">
                                                 <a
                                                     href="https://www.portland.gov/311/ada-request"
                                                     title="Request accommodations under the Americans with Disabilities Act"
                                                     data-drupal-link-system-path="node/25709"
-                                                    >ADA Accommodation</a>
+                                                    >ADA accommodation</a>
                                             </li>
                                             <li class="menu-item">
                                                 <a
-                                                    href="https://www.portland.gov/captioning-transcription-policy"
+                                                    href="https://www.portland.gov/help/about/captioning-and-transcription-policy"
                                                     title="Policies regarding the captioning and transcription of video and audio"
                                                     data-drupal-link-system-path="node/569"
-                                                    >Captioning, transcription</a>
+                                                    >Captioning and transcription</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://www.portland.gov/privacy-policy">Privacy policy</a>
+                                                <a href="https://www.portland.gov/help/about/privacy">Privacy policy</a>
                                             </li>
                                         </ul>
-                                    </nav>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-3 mb-2 order-md-last">
                             <div class="region region-footer-third">
-                                <nav
-                                    role="navigation"
-                                    aria-labelledby="block-portlandgov-menu"
+                                <div
                                     id="block-portlandgov"
                                     data-block-plugin-id="system_menu_block:footer"
-                                    class="block block-menu navigation menu--footer">
+                                    class="block block-menu navigation menu--footer mb-6">
                                     <h2 id="block-portlandgov-menu">Portland.gov</h2>
 
-                                    <ul class="menu">
+                                    <ul class="menu menu--level-1">
                                         <li class="menu-item">
                                             <a
                                                 href="https://www.portland.gov/help/about"
                                                 data-drupal-link-system-path="node/6008"
                                                 class="is-active"
-                                                >About this Website</a>
+                                                >About this website</a>
                                         </li>
                                         <li class="menu-item">
                                             <a
                                                 href="https://employees.portland.gov"
                                                 title="Employee information on employees.portland.gov"
-                                                >Employee Portal</a>
+                                                >Employee portal</a>
                                         </li>
                                     </ul>
-                                </nav>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-3 mb-2 order-lg-first">
                             <h2>City of Portland, Oregon</h2>
                             <p>
                                 <!-- TODO: Update the paths below the location where you've uploaded the image files -->
-                                <source media="" srcset="img/city-seal.png" />
                                 <img
                                     src="img/city-seal.png"
                                     alt="Official City of Portland seal. The image depicts Portlandia holding her trident backdropped by mountain and river, accompanied by the text 'City of Portland, Oregon 1851'"
                                     class="img-fluid" />
                             </p>
                             <!-- TODO: If possible, dynamicaly output the current year below -->
-                            <p>&copy; Copyright 2018-2025</p>
+                            <p>&copy; Copyright 2018-2026</p>
                         </div>
                     </div>
                 </div>
@@ -471,12 +464,12 @@
     </div>
 
     <!-- TODO: Update the paths below the location where you've uploaded the JavaScript files -->
-    <script src="js/jquery.min.js?v=3.7.1"></script>
+    <script src="js/jquery.min.js?v=4.0.0"></script>
     <script src="js/once.min.js?v=1.0.1"></script>
-    <script src="js/drupalSettingsLoader.js?v=10.4.3"></script>
-    <script src="js/drupal.js?v=10.4.3"></script>
-    <script src="js/drupal.init.js?v=10.4.3"></script>
-    <script src="js/cloudy.bundle.js?rnzltu"></script>
+    <script src="js/drupalSettingsLoader.js?v=11.3.8"></script>
+    <script src="js/drupal.js?v=11.3.8"></script>
+    <script src="js/drupal.init.js?v=11.3.8"></script>
+    <script src="js/cloudy.bundle.js?tdnc1p"></script>
     <script>$ = jQuery;</script>
 
     <!-- TODO: Insert any additional JavaScript includes required by your application here -->
